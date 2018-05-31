@@ -59,11 +59,12 @@ public void SelectFromToDestination() {
 	
 
 	driver.findElement(By.xpath("//input[@id='hp-widget__sfrom']")).click();
+	driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	driver.findElement(By.xpath("//span[contains(text(),'Mumbai, India')]")).click();
 	
-	
-	driver.findElement(By.xpath("//span[contains(text(),'New Delhi, India')]")).click();
-	
+	driver.findElement(By.xpath("//input[@id='hp-widget__sTo']")).click();
+	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+	driver.findElement(By.xpath("(//span[contains(text(),'New Delhi, India')])[2]")).click();
 	System.out.println("Destinations has been selected");
 	
 	System.out.println("Committed using cmd line")
