@@ -66,7 +66,7 @@ public void SelectFromToDestination() {
 	
 	System.out.println("Destinations has been selected");
 	
-	
+	System.out.println("Committed using cmd line")
 
 
 
