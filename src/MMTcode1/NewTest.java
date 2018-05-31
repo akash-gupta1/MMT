@@ -47,7 +47,7 @@ public void verifyAllTabsOnHomeapge() {
 	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	
 	Assert.assertTrue(driver.findElement(By.xpath("//*[@id='header_tab_flights']")).isDisplayed());
-	//Assert.assertTrue(driver.findElement(By.xpath("//*[@id='header_tab_flights']")).isSelected());
+	
 	System.out.println("Flight tab is displayed in header and is selected by default");
 	
 }
@@ -57,26 +57,17 @@ public void SelectFromToDestination() {
 	
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
-	//driver.switchTo().frame("input[@id='hp-widget__sfrom']");
+
 	driver.findElement(By.xpath("//input[@id='hp-widget__sfrom']")).click();
 	driver.findElement(By.xpath("//span[contains(text(),'Mumbai, India')]")).click();
 	
-	//driver.findElement(By.xpath("//span[contains(text(),'Mumbai, India')]")).click();
+	
 	driver.findElement(By.xpath("//span[contains(text(),'New Delhi, India')]")).click();
 	
 	System.out.println("Destinations has been selected");
 	
 	
 
-	/*WebElement mySelectElement = driver.findElement(By.xpath("//div[@class='inputM inputHlp inputFilter visited']//input[@id='hp-widget__sfrom']"));
-	Select dropdown= new Select(mySelectElement);
-	dropdown.selectByVisibleText("Mumbai");
-	
-	WebElement mySelectElement2 = driver.findElement(By.xpath("//input[@id='hp-widget__sTo']"));
-	Select dropdown2= new Select(mySelectElement2);
-	dropdown2.selectByVisibleText("New Delhi");
-	System.out.println("Destination is now seleted");
-}*/
 
 
 }
