@@ -64,6 +64,8 @@ public void SelectFromToDestination() {
 	//driver.findElement(By.xpath("//span[contains(text(),'Mumbai, India')]")).click();
 	driver.findElement(By.xpath("//span[contains(text(),'New Delhi, India')]")).click();
 	
+	System.out.println("Destinations has been selected");
+	
 	
 
 	/*WebElement mySelectElement = driver.findElement(By.xpath("//div[@class='inputM inputHlp inputFilter visited']//input[@id='hp-widget__sfrom']"));
