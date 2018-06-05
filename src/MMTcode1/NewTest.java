@@ -39,6 +39,38 @@ public class NewTest {
      Assert.assertEquals(actualTitle, expectedTitle);
      System.out.print(actualTitle);
 }
+
+@Test
+public void Login_Into_MMT()throws IOException, InterruptedException {
+//File Reading Code 
+File file = new File("D:/workspace/MMT/src/MMTcode1/data.properties");
+	FileInputStream fileInput = null;
+	try {
+		fileInput = new FileInputStream(file);
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	}
+	Properties prop = new Properties();
+	
+	//load properties file
+	try {
+		prop.load(fileInput);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+
+	 driver.manage().window().maximize();
+	 driver.findElement(By.id("ch_login_icon")).click();
+    Thread.sleep(2000);
+driver.findElement(By.cssSelector("#ch_login_email")).sendKeys(prop.getProperty("username"));
+driver.findElement(By.id("ch_login_password")).sendKeys(prop.getProperty("password"));
+driver.findElement(By.id("ch_login_btn")).click();
+	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	
+Assert.assertTrue(driver.findElement(By.xpath("//a[@id='ch_logged-in']//span[contains(text(),'Hey Akash')]")).isDisplayed());
+}
+
+
  
 
 @Test	
