@@ -87,24 +87,22 @@ public void verifyAllTabsOnHomeapge() {
 public void SelectFromToDestination() {
 	
 	
-	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	WebElement Dropdown = driver.findElement(By.xpath("//input[@id='hp-widget__sTo']"));
+	Dropdown.click();
+	List <WebElement> Allelements = driver.findElements(By.xpath("//ul[@id='ui-id-2']"));
 	
-
-	driver.findElement(By.xpath("//input[@id='hp-widget__sfrom']")).click();
-	driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-	driver.findElement(By.xpath("//span[contains(text(),'Mumbai, India')]")).click();
-	
-	driver.findElement(By.xpath("//input[@id='hp-widget__sTo']")).click();
-	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-	driver.findElement(By.xpath("(//span[contains(text(),'New Delhi, India')])[2]")).click();
-	System.out.println("Destinations has been selected");
-	
-	System.out.println("Committed using cmd line")
-
-
-
+	for ( WebElement we: Allelements) { 
+		System.out.println(we.getText());
+		
+        Dropdown.sendKeys( Keys.DOWN );
+        Dropdown.sendKeys( Keys.ENTER );
+       Thread.sleep(500);
+        
+       
+        
+        
+    }
 }
-
 
 	  
 	
